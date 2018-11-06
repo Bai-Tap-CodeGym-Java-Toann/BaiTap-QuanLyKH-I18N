@@ -1,11 +1,16 @@
-package lanaDrahrepus;
+package lanaDrahrepus.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{ApplicationConfig.class};
+        return new Class[]{
+                ApplicationConfiguration.class,
+                ServiceInjectedBeans.class,
+                SpringDataJPAConfig.class,
+                ThymeLeafConfig.class,
+        };
     }
 
     @Override

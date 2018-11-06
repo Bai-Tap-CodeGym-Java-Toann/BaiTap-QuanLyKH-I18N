@@ -2,18 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="#{customer.customer}"></title>
 </head>
 <body>
-<a href="/create-customer">Create new customer</a>
-<h1>Customers</h1>
+Language: <a href="?lang=en">English</a> | <a href="?lang=vi">Viet Nam</a>
+<br>
+<a href="/create-customer" th:text="#{customer.create}+' '+#{customer}"></a>
+<h1 th:text="#{customer.customer}"></h1>
 <table border="1">
     <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Province</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th th:text="#{form.firstname}"></th>
+        <th th:text="#{form.lastname}"></th>
+        <th th:text="#{form.province}"></th>
+        <th th:text="#{customer.edit}"></th>
+        <th th:text="#{customer.delete}"></th>
     </tr>
     <th:block th:each="customer : ${customers}">
         <tr>
